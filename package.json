@@ -1,6 +1,7 @@
 {
   "name": "tree-shaking",
   "version": "0.1.0",
+  "sideEffects": false,
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,11 +9,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.4.4",
+    "next": "canary",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^9.4.4"
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@next/bundle-analyzer": "^9.4.4",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
