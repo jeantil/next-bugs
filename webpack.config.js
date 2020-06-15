@@ -1,6 +1,5 @@
-module.exports = {
+const baseConfig = {
   entry: {
-    next: "./pages/index.jsx",
     purejs: "./pages/main.js",
   },
   module: {
@@ -15,13 +14,13 @@ module.exports = {
           },
         },
       },
+      { test: /\.css$/, use: "css-loader" },
     ],
   },
   resolve: {
     extensions: ["*", ".js", ".jsx"],
   },
   output: {
-    path: __dirname + "/dist",
     publicPath: "/",
     filename: "[name].bundle.js",
   },
@@ -29,4 +28,21 @@ module.exports = {
   optimization: {
     usedExports: true,
   },
+  stats: {
+    // Examine all modules
+    maxModules: Infinity,
+    // Display bailout reasons
+    optimizationBailout: true,
+  },
 };
+const serverConfig = {
+  ...baseConfig,
+  target: "node",
+  output: { ...baseConfig.output, path: __dirname + "/dist/server" },
+};
+const webConfig = {
+  ...baseConfig,
+  target: "web",
+  output: { ...baseConfig.output, path: __dirname + "/dist" },
+};
+module.exports = [serverConfig, webConfig];

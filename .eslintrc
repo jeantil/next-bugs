@@ -1,0 +1,7 @@
+{
+  "parserOptions": { "ecmaVersion": 10, "sourceType": "module" },
+  "plugins": ["tree-shaking"],
+  "rules": {
+    "tree-shaking/no-side-effects-in-initialization": 2
+  }
+}

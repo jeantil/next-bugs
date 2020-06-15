@@ -1,4 +1,4 @@
-export const X = /*#__PURE__*/ "X";
+export /*#__PURE__*/ const X = "X";
 
 const a = function () {
   return "About a!";
