@@ -1,6 +1,8 @@
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+
 const baseConfig = {
   entry: {
-    purejs: "./pages/main.js",
+    purejs: "./src/main.js",
   },
   module: {
     rules: [
@@ -27,6 +29,15 @@ const baseConfig = {
   mode: "development",
   optimization: {
     usedExports: true,
+    minimizer: [
+      new TerserWebpackPlugin({
+        terserOptions: {
+          compress: {
+            passes: 3,
+          },
+        },
+      }),
+    ],
   },
   stats: {
     // Examine all modules
