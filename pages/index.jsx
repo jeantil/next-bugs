@@ -1,18 +1,38 @@
 import React from "react";
-import { HREF } from "./bar";
-import { BAZ_HREF } from "./baz";
+import Link from "next/link";
+
+export const Nav = () => {
+  const cases = [
+    "noprops",
+    "staticprops",
+    "staticpaths/a",
+    "staticpaths/b",
+    "staticpathsfallback/a",
+    "staticpathsfallback/b",
+    "staticemptypaths/a",
+    "staticemptypaths/b",
+  ];
+  return (
+    <ul style={{ "font-size": "18px", "line-height": "48px" }}>
+      {cases.map((c, idx) => {
+        return (
+          <li key={`${c}-${idx}`}>
+            <a href={`/${c}`}>{c} direct</a> |{" "}
+            <Link href={`/${c}`}>
+              <a href={`/${c}`}>{c} Link</a>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
 const IndexPage = (ctx) => {
-  console.log(ctx);
-  if (typeof window === "undefined") {
-    const lang = ctx.req ? "req" : "no req";
-    console.log("lang from accept", lang);
-  } else {
-    console.log("in the browser there is no accept");
-  }
   return (
     <>
-      {HREF} {BAZ_HREF}
+      <h1>SSG variants</h1>
+      <Nav />
     </>
   );
 };
