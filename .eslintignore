@@ -1,0 +1,10 @@
+.next
+.firebase
+.git
+.secret
+.vscode
+**/node_modules/*
+**/dist/*
+public
+next.config.js
+webpack.config.js

@@ -1,7 +1,9 @@
 {
   "parserOptions": { "ecmaVersion": 10, "sourceType": "module" },
-  "plugins": ["tree-shaking"],
+  "plugins": ["react", "react-hooks", "tree-shaking"],
+  "extends": ["plugin:react/recommended", "prettier/react"],
   "rules": {
-    "tree-shaking/no-side-effects-in-initialization": 2
+    "tree-shaking/no-side-effects-in-initialization": 2,
+    "react/prop-types": 0
   }
 }

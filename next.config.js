@@ -5,9 +5,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 module.exports = withBundleAnalyzer({
-  experimental: {
-    modern: false,
-  },
   webpack: function (config) {
     config.optimization.minimizer.forEach((p) => {
       if (p.options && p.options.terserOptions) {
