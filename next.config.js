@@ -1,11 +1,17 @@
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
-module.exports = withBundleAnalyzer({
-  webpack: function (config) {
+module.exports = {
+  webpack: function (config, { isServer }) {
+    if (!isServer && process.env.ANALYZE === "true") {
+      const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: "static",
+          reportFilename: "./analyze/client.html",
+          generateStatsFile: true,
+        })
+      );
+    }
     config.optimization.minimizer.forEach((p) => {
       if (p.options && p.options.terserOptions) {
         p.options.terserOptions.compress.passes = 30;
@@ -15,4 +21,4 @@ module.exports = withBundleAnalyzer({
     config.mode = "development";
     return config;
   },
-});
+};
