@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav } from "..";
+import { Nav } from "../../src/Nav";
 
 const BazPage = (props) => (
   <>

@@ -1,12 +1,12 @@
 import React from "react";
-import { Nav } from "..";
+import { Nav } from "../../src/Nav";
 
 export const getStaticProps = (ctx) => {
   console.log();
   console.log("static paths", ctx);
   const timestamp = new Date().toISOString();
   console.log("static paths", timestamp);
-  return { props: { timestamp }, unstable_revalidate: 1 };
+  return { props: { timestamp }, revalidate: 1 };
 };
 
 export const getStaticPaths = () => {
