@@ -18,10 +18,10 @@ export const getStaticProps = async (params) => {
 };
 const BazPage = (props) => (
   <>
-    <h1>About no props {props.lang}/Baz</h1>
+    <h1>About variables {props.lang}/Baz</h1>
     <h2>props.date :{props.date}</h2>
     <h2>page date: {new Date().toISOString()}</h2>
-    <h3>props</h3>
+    <h3>Props</h3>
     <div>
       <pre style={{ backgroundColor: "#efefef", maxWidth: "650px" }}>
         <code>{JSON.stringify(props, null, 2)}</code>

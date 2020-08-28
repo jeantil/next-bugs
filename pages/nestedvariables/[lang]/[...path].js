@@ -19,11 +19,12 @@ export const getStaticProps = async (params) => {
 const Page = (props) => (
   <>
     <h1>
-      About static props {props.lang}/{props.path?.join("/")}
+      About variables and nested catchall {props.params?.lang}/
+      {props.params?.path?.join("/")}
     </h1>
-    <h2>props.date :{props.date}</h2>
-    <h2>page date: {new Date().toISOString()}</h2>
-    <h3>props</h3>
+    <h2>Props.date :{props.date}</h2>
+    <h2>Page date: {new Date().toISOString()}</h2>
+    <h3>Props</h3>
     <div>
       <pre style={{ backgroundColor: "#efefef", maxWidth: "650px" }}>
         <code>{JSON.stringify(props, null, 2)}</code>
