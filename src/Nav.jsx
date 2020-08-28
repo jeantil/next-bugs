@@ -11,12 +11,12 @@ export const Nav = () => {
     "staticpathsfallback/b",
     "staticemptypaths/a",
     "staticemptypaths/b",
-    "fr/",
-    "en/",
-    "fr/foo",
-    "en/foo",
-    "fr/bar",
-    "en/baz",
+    "nestedvariables/fr/",
+    "nestedvariables/en/",
+    "nestedvariables/fr/foo",
+    "nestedvariables/en/foo",
+    "nestedvariables/en/bar/baz",
+    "nestedvariables/fr/baz/bar",
   ];
   return (
     <ul style={{ fontSize: "18px", lineHeight: "48px" }}>
