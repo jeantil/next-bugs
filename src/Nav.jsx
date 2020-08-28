@@ -3,14 +3,6 @@ import Link from "next/link";
 
 export const Nav = () => {
   const cases = [
-    "noprops",
-    "staticprops",
-    "staticpaths/a",
-    "staticpaths/b",
-    "staticpathsfallback/a",
-    "staticpathsfallback/b",
-    "staticemptypaths/a",
-    "staticemptypaths/b",
     "nestedvariables/fr",
     "nestedvariables/en",
     "nestedvariables/fr/foo",
